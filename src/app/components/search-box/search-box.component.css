@@ -1,0 +1,19 @@
+.mat-card {
+    font-family: Montserrat !important;
+    font-weight: bolder;
+
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #9b9b9b,
+        0 1px 1px 0 #9b9b9b,
+        0 1px 3px 0 #9b9b9b;
+}
+
+.font {
+    font-family: Montserrat !important;
+    font-weight: bolder;
+}
+
+input {
+    font-family: Montserrat !important;
+    font-weight: bolder;
+}
