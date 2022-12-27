@@ -1,8 +1,9 @@
 .mat-card {
     font-family: Montserrat !important;
     font-weight: bolder;
-
     border-radius: 20px;
+    margin-top: 10px;
+    padding: 5px;
     box-shadow: 0px 0px 10px 0px #9b9b9b,
         0 1px 1px 0 #9b9b9b,
         0 1px 3px 0 #9b9b9b;
@@ -14,6 +15,19 @@
 }
 
 input {
+
     font-family: Montserrat !important;
     font-weight: bolder;
+    background-color: white;
+}
+
+.helpbutton {
+    font-family: Montserrat;
+    color: #4a9fe0;
+    font-weight: 800;
+}
+
+.expansionPanel {
+    border: transparent;
+    box-shadow: none;
 }

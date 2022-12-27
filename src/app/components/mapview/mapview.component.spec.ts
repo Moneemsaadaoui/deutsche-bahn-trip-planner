@@ -8,15 +8,19 @@ describe('MapviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapviewComponent ]
+      declarations: [MapviewComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MapviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+  it('should handle no data being passed', () => {
+    component.poly = null
+    component.stop = null
+    expect(component).toBeTruthy();
+  });
   it('should create', () => {
     expect(component).toBeTruthy();
   });

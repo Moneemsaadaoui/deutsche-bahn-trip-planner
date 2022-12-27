@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Lendis-HW": {
+    "trip-HW": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lendis-hw",
+            "outputPath": "dist/trip-hw",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Lendis-HW:build:production"
+              "browserTarget": "trip-HW:build:production"
             },
             "development": {
-              "browserTarget": "Lendis-HW:build:development"
+              "browserTarget": "trip-HW:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Lendis-HW:build"
+            "browserTarget": "trip-HW:build"
           }
         },
         "test": {

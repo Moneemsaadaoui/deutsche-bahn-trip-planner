@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CarditemComponent } from './carditem.component';
 
@@ -8,9 +9,10 @@ describe('CarditemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarditemComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [CarditemComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CarditemComponent);
     component = fixture.componentInstance;
@@ -18,6 +20,11 @@ describe('CarditemComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should handle no data being passed', () => {
+    component.data = []
     expect(component).toBeTruthy();
   });
 });

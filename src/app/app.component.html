@@ -1,7 +1,27 @@
-<div class="row" style="height:200px ;">
-  <app-search-box class="col-lg-8" style="margin: auto;"></app-search-box>
+<div class="row col-lg-4 col-xs-12 parentDiv">
+  <button *ngIf="!isControlsVisible" class="goBack" (click)="goBack()" mat-raised-button>🡸 GO BACK </button>
+  <button *ngIf="!isControlsVisible" class="goBack" (click)="ToggleStops()" mat-raised-button>🔄 Toggle Stops</button>
+  <app-search-box *ngIf="isControlsVisible" (open)="onOpen($event)"></app-search-box>
+
+  <div *ngIf="isControlsVisible">
+    <div *ngFor="let item of data">
+      <app-carditem class="m-auto" [data]="item" (polylineData)="recievePolyline($event)"
+        (stops)="receiveStops($event)">
+      </app-carditem>
+    </div>
+  </div>
+  <div *ngIf="!isControlsVisible && showStops">
+    <div *ngFor="let stop of stops">
+      <app-stops-list (stopMarker)="receiveStopMarker($event)" [data]="stop"></app-stops-list>
+    </div>
+  </div>
 </div>
-<div class="row" style="max-width: 100% !important;">
-  <app-card-list class="col-lg-6 m-0 list" style="overflow-y: scroll;height: 70vh;"></app-card-list>
-  <app-mapview class="col-lg-6 m-0"></app-mapview>
+
+<div class="row" class="mapContainer">
+  <app-mapview [ngClass]="{'blurry':isControlsVisible==true}" [stop]="StopMarker" [poly]="poly"></app-mapview>
 </div>
+
+
+
+<button *ngIf="isControlsVisible" mat-raised-button class="creditButton"> Created with ❤️ By Abdel Moneem Saadaoui📧
+  contact.moneem@gmail.com 🎉</button>

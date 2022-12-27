@@ -1,14 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { StopsListComponent } from './components/stops-list/stops-list.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 
+import { MapviewComponent } from './components/mapview/mapview.component';
+import { CarditemComponent } from './components/carditem/carditem.component';
 describe('AppComponent', () => {
+  let component: AppComponent
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatSnackBarModule
       ],
       declarations: [
+        StopsListComponent, SearchBoxComponent, MapviewComponent, CarditemComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -20,16 +28,25 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Lendis-HW'`, () => {
+  it(`Controls should be visible'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Lendis-HW');
+    expect(app.isControlsVisible).toBeTruthy()
   });
 
-  it('should render title', () => {
+
+  it(`Controls should switch state on item click event'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Lendis-HW app is running!');
+    const app = fixture.componentInstance;
+    app.recievePolyline("test");
+    expect(app.isControlsVisible).toEqual(false)
   });
+
+  it(`Controls should switch state to being visible on item click event'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.goBack();
+    expect(app.isControlsVisible).toEqual(true)
+  });
+
 });

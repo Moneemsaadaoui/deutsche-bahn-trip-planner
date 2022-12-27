@@ -1,0 +1,27 @@
+<div *ngIf="data">
+    <div class="m-2" (click)="doPlaceMarker()">
+        <mat-card class="d-flex">
+            <div class="col-lg-11">
+                <mat-card-title class="lineSpaced">{{data.stop.name}}
+                </mat-card-title>
+                <mat-card-subtitle><small>🕒Departure:{{data.departure| date:'h:mm'}}</small> </mat-card-subtitle>
+                <mat-card-subtitle><small>🕒Arrival:{{data.arrival| date:'h:mm'}}</small> </mat-card-subtitle>
+            </div>
+            <div class="col-lg-1">
+                <img class="chevron"  src="/assets/img/right-chevron.png" alt=">" height="30px" />
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div *ngIf="!data">
+    <div class="m-2">
+        <mat-card class="d-flex">
+            <div class="col-lg-11">
+                <mat-card-title class="lineSpaced">No Data Is Available 😔
+                </mat-card-title>
+
+            </div>
+
+        </mat-card>
+    </div>
+</div>

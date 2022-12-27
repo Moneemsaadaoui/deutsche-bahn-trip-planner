@@ -1,11 +1,30 @@
-<div class="m-2">
+<div *ngIf="data" class="m-2" (click)="doGetTrips()">
     <mat-card class="d-flex">
         <div class="col-lg-11">
-            <mat-card-title>{{title}}</mat-card-title>
-            <mat-card-subtitle>Station</mat-card-subtitle>
+            <mat-card-title class="lineSpaced"><span *ngIf="data.line.mode=='bus'" class="p-1">🚌</span>
+                <span *ngIf="data.line.mode=='train'" class="p-1">🚂</span>{{data.destination.name}}
+            </mat-card-title>
+            <mat-card-subtitle><small>🕒</small> {{data.plannedWhen| date:'h:mm'}} </mat-card-subtitle>
+
+            <mat-card-subtitle><small>🛈 Delay:</small> {{data.delay/60}} mins</mat-card-subtitle>
+
         </div>
         <div class="col-lg-1">
-            <img class="chevron" style="opacity: 50%;" src="/assets/img/right-chevron.png" alt=">" height="30px" />
+            <img class="chevron opacity-50" src="/assets/img/right-chevron.png" alt=">" height="30px" />
         </div>
     </mat-card>
+</div>
+
+<div *ngIf="!data">
+    <div class="m-2">
+        <mat-card class="d-flex">
+            <div class="col-lg-11">
+                <mat-card-title class="lineSpaced"
+            >No Data Is Available 😔
+                </mat-card-title>
+
+            </div>
+
+        </mat-card>
+    </div>
 </div>
