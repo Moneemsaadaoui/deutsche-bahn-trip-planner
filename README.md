@@ -73,7 +73,7 @@ desktop and mobile users. we are confident that the mobile usability is
 indispensable as the true utility of this piece of software is on the go.
 
 **STEP 1 : Data Input & Search**
-The navigation between dierent controls and steps is achieved seemlessly without
+The navigation between different controls and steps is achieved seemlessly without
 the need to go through convoluted dierent pages and everything that the use may
 need is present on screen at all times.
 The user input process is intuitive, as the needed data invites the user to enter the
@@ -107,6 +107,6 @@ production one to remove the watermark from the map
 
 ```
 
-Abdel Moneem Saadaoui - Contact.moneem@gmail.com-+ 21620087170
+Abdel Moneem Saadaoui - Contact.moneem@gmail.com
 ```
 
